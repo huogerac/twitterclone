@@ -12,11 +12,9 @@ from ..core.service import log_svc
 router = Router()
 
 
-
 @router.post("/login", response=UserSchema)
 @csrf_exempt
 def login(request, username: str = Form(...), password: str = Form(...)):
-
     username = request.POST["username"]
     password = request.POST["password"]
     user = auth.authenticate(username=username, password=password)

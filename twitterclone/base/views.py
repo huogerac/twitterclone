@@ -21,6 +21,3 @@ def status(request):
     cursor.execute("""SELECT 1+1""")
     row = cursor.fetchone()
     return JsonResponse({"status": "ok", "db": "ok" if row == (2,) else "error"})
-
-
-

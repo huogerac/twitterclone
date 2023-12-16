@@ -24,6 +24,5 @@ from .api import api
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", api.urls),
-    
     path("", TemplateView.as_view(template_name="base/apihome.html")),
 ]

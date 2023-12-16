@@ -12,10 +12,7 @@ from .schemas import ListTweetsSchema, TweetSchema, TweetSchemaIn
 from .service import tweets_svc
 
 
-
 router = Router()
-
-
 
 
 @router.post("/tweets/add", response=TweetSchema)
@@ -26,9 +23,7 @@ def add_tweet(request, tweet: TweetSchemaIn):
     return JsonResponse(new_tweet)
 
 
-
 @router.get("/tweets/list", response=ListTweetsSchema)
-
 def list_tweets(request):
     tweets = tweets_svc.list_tweets()
     return JsonResponse({"tweets": tweets})
