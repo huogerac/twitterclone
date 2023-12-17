@@ -1,13 +1,10 @@
 name: Deploy to Fly.io
 
 on:
-  workflow_run:
-    workflows:
-      - twitterclone CI
-    types:
-      - completed
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+      tags:
+        description: 'Test scenario tags'
 
 jobs:
   deploy:

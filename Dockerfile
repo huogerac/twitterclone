@@ -1,8 +1,6 @@
 FROM python:3.10-slim
 
-WORKDIR /app
-
-
+WORKDIR /code
 
 # Install basic SO and Python
 RUN apt-get update --fix-missing \
@@ -36,7 +34,6 @@ ENV SHELL=/bin/bash LANG=en_US.UTF-8
 COPY . ./
 
 EXPOSE 8000
-
 
 CMD ["gunicorn", "--bind", ":8000", "--workers", "2", "twitterclone.twitterclone.wsgi"]
 
